@@ -1,0 +1,196 @@
+# Cloud-1 Project .gitignore
+
+# ============================================
+# Secrets and Credentials (CRITICAL!)
+# ============================================
+# Never commit passwords, API keys, or credentials
+secrets/
+*.secret
+*.key
+*.pem
+*.p12
+*.pfx
+*_rsa
+*_dsa
+*_ed25519
+*.env
+.env.*
+credentials.json
+config.json
+
+# Docker secrets
+src/website/secrets/
+**/secrets/*.txt
+
+# Cloud provider credentials
+*.credentials
+.gcp/
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+
+# SSH keys
+id_rsa
+id_rsa.pub
+*.ppk
+
+# ============================================
+# Ansible
+# ============================================
+*.retry
+ansible.log
+.vault_pass
+vault_pass.txt
+inventory/hosts.ini
+inventory/production
+inventory/staging
+
+# ============================================
+# WordPress & Database Data
+# ============================================
+# WordPress files (only ignore if not customizing)
+src/website/wordpress/
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/upgrade/
+wp-content/w3tc-config/
+
+# Database dumps
+*.sql
+*.sql.gz
+*.sql.zip
+*.dump
+
+# ============================================
+# Docker
+# ============================================
+# Docker volumes data
+docker-data/
+volumes/
+db_data/
+wordpress_data/
+
+# Docker override files (for local dev)
+docker-compose.override.yml
+
+# ============================================
+# Logs
+# ============================================
+logs/
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Nginx logs
+src/website/nginx/logs/
+access.log
+error.log
+
+# ============================================
+# Operating System
+# ============================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ============================================
+# IDEs and Editors
+# ============================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# Python (for Ansible)
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# ============================================
+# Terraform (if used)
+# ============================================
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ============================================
+# Temporary Files
+# ============================================
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+*.cache
+*.old
+
+# ============================================
+# Compressed Files (backups)
+# ============================================
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.rar
+*.7z
+
+# ============================================
+# Project Documentation Build Output
+# ============================================
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Keep the project PDF documentation
+!cloud-1.pdf
